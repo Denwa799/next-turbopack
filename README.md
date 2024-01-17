@@ -1,25 +1,31 @@
-# Next.js + Turbopack
+# Тестирование возможностей turbopack
 
-This example allows you to get started with `next dev --turbo` quicky.
+## Работает из коробки
 
-## Deploy your own
+- jsx
+- global css импорты
+- css модули
+- postcss-nested синтаксис
+- @import внутри css
+- HMR
+- импорт статических ресурсов
+- /public каталог
+- импорт и именованный импорт json
+- CommonJS
+- ESM
+- .env
+- динамический импорт
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-turbopack&project-name=with-turbopack&repository-name=with-turbopack)
+## Общая информация
 
-## How to use
+Использует swc для компиляции typescript
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+postcss.config.js позволяет установить правила обработки css с помощью postCSS
 
-```bash
-npx create-next-app --example with-turbopack with-turbopack-app
-```
+tailwind работает через плагины
 
-```bash
-yarn create next-app --example with-turbopack with-turbopack-app
-```
+## Не поддерживается
 
-```bash
-pnpm create next-app --example with-turbopack with-turbopack-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- babel
+- sass и less (но что интересно, в проекте заработали. Даже без пакета sass. Это либо next так позволил, либо все таки сделали поддержку)
+- plugins (Поддерживаются только загрузчики, возвращающие код JavaScript. Загрузчики, преобразующие файлы такие как таблицы стилей или изображения, в настоящее время не поддерживаются)

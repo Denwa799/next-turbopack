@@ -1,0 +1,9 @@
+.title {
+    color: gray
+}
+
+.imageBlock {
+    .image {
+        border-radius: 40px;
+    }
+}
